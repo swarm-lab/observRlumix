@@ -13,5 +13,6 @@ Depends:
     svDialogs
 Imports:
     magicLamp (>= 0.1.0),
-    progress
+    progress,
+    RCurl
 RoxygenNote: 6.1.1

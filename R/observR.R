@@ -16,9 +16,11 @@ observR <- function(wemo, cameras) {
 
   for (i in seq_len(length(times))) {
     magicLamp::wemo_ON(wemo)
-    Sys.sleep(2)
+    Sys.sleep(1)
 
     grabPictures(cameras)
+
+    Sys.sleep(1)
 
     pb$tick()
 
