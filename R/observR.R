@@ -1,5 +1,5 @@
 #' @export
-observR <- function(wemo, cameras) {
+observR <- function(wemo, cameras, delay = 5) {
   magicLamp::wemo_ON(wemo)
   initCams(cameras)
   magicLamp::wemo_OFF(wemo)
@@ -20,7 +20,7 @@ observR <- function(wemo, cameras) {
 
     grabPictures(cameras)
 
-    Sys.sleep(1)
+    Sys.sleep(delay)
 
     pb$tick()
 
