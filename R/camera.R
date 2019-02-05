@@ -16,10 +16,3 @@ grabPictures <- function(cameras) {
 
   NULL
 }
-
-
-
-
-
-
-
