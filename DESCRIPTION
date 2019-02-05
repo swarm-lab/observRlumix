@@ -1,0 +1,19 @@
+Package: observRlumix
+Type: Package
+Title: What the Package Does (Title Case)
+Version: 0.1.0
+Author: Who wrote it
+Maintainer: The package maintainer <yourself@somewhere.net>
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+Depends:
+    svDialogs
+Imports:
+    magicLamp (>= 0.1.0),
+    progress
+Remotes: 
+    swarm-lab/magicLamp
+RoxygenNote: 6.1.1
