@@ -15,8 +15,11 @@ observR <- function(wemo, cameras, delay = 5) {
   pb <- progress::progress_bar$new(total = length(times), format = "Progress [:bar] :percent")
 
   for (i in seq_len(length(times))) {
-    magicLamp::wemo_ON(wemo)
-    Sys.sleep(1)
+    success <- FALSE
+    while (!success)
+      success <- magicLamp::wemo_ON(wemo)$success
+
+    Sys.sleep(delay)
 
     grabPictures(cameras)
 
@@ -24,7 +27,9 @@ observR <- function(wemo, cameras, delay = 5) {
 
     pb$tick()
 
-    magicLamp::wemo_OFF(wemo)
+    success <- FALSE
+    while (!success)
+      success <- magicLamp::wemo_OFF(wemo)$success
 
     if (i < length(times)) {
       Sys.sleep((times[i + 1] - now()) / 1000)
